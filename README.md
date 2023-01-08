@@ -2,6 +2,7 @@
 
 ![thumbnail](/Properties/thumbnail.png)
 
+## Description 
 This library is a [MonoMod](https://github.com/MonoMod/MonoMod) mod which replaces Gomez with Sonez - a merge of Gomez and Sonic, which can be seen in Speedrun Mode thumbnail.
 
 ## Installation
