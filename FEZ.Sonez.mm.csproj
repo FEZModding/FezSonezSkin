@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8890A881-E469-42F3-8BF7-0A71E68A5522}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sonez</RootNamespace>
+    <AssemblyName>FEZ.Sonez.mm</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common">
+      <HintPath>Dependencies\Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ContentSerialization">
+      <HintPath>Dependencies\ContentSerialization.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyStorage">
+      <HintPath>Dependencies\EasyStorage.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FEZ">
+      <HintPath>Dependencies\FEZ.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FezEngine">
+      <HintPath>Dependencies\FezEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FNA">
+      <HintPath>Dependencies\FNA.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MonoMod">
+      <HintPath>Dependencies\MonoMod.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>Dependencies\MonoMod.Utils.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XnaWordWrapCore">
+      <HintPath>Dependencies\XnaWordWrapCore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SonezAnimationLoader.cs" />
+    <Compile Include="patch_PlayerManager.cs" />
+    <Compile Include="patch_GomezHost.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Animations\airpanic.xnb" />
+    <EmbeddedResource Include="Animations\airpanic_nohat.xnb" />
+    <EmbeddedResource Include="Animations\backtocornergrab.xnb" />
+    <EmbeddedResource Include="Animations\backtocornergrab_nohat.xnb" />
+    <EmbeddedResource Include="Animations\carryenter.xnb" />
+    <EmbeddedResource Include="Animations\carryenter_nohat.xnb" />
+    <EmbeddedResource Include="Animations\carryexit.xnb" />
+    <EmbeddedResource Include="Animations\carryexit_nohat.xnb" />
+    <EmbeddedResource Include="Animations\carryheavyenter.xnb" />
+    <EmbeddedResource Include="Animations\carryheavyenter_nohat.xnb" />
+    <EmbeddedResource Include="Animations\carryheavyexit.xnb" />
+    <EmbeddedResource Include="Animations\carryheavyexit_nohat.xnb" />
+    <EmbeddedResource Include="Animations\carryheavyjump.xnb" />
+    <EmbeddedResource Include="Animations\carryheavyjump_nohat.xnb" />
+    <EmbeddedResource Include="Animations\carryheavystand.xnb" />
+    <EmbeddedResource Include="Animations\carryheavystand_nohat.xnb" />
+    <EmbeddedResource Include="Animations\carryheavywalk.xnb" />
+    <EmbeddedResource Include="Animations\carryheavywalk_nohat.xnb" />
+    <EmbeddedResource Include="Animations\carryjump.xnb" />
+    <EmbeddedResource Include="Animations\carryjump_nohat.xnb" />
+    <EmbeddedResource Include="Animations\carrystand.xnb" />
+    <EmbeddedResource Include="Animations\carrystand_nohat.xnb" />
+    <EmbeddedResource Include="Animations\carrywalk.xnb" />
+    <EmbeddedResource Include="Animations\carrywalk_nohat.xnb" />
+    <EmbeddedResource Include="Animations\climbbacksideways.xnb" />
+    <EmbeddedResource Include="Animations\climbbacksideways_nohat.xnb" />
+    <EmbeddedResource Include="Animations\climbfront.xnb" />
+    <EmbeddedResource Include="Animations\climbfrontsideways.xnb" />
+    <EmbeddedResource Include="Animations\climbfrontsideways_nohat.xnb" />
+    <EmbeddedResource Include="Animations\climbfront_nohat.xnb" />
+    <EmbeddedResource Include="Animations\climboverladder.xnb" />
+    <EmbeddedResource Include="Animations\climboverladder_nohat.xnb" />
+    <EmbeddedResource Include="Animations\climbrear.xnb" />
+    <EmbeddedResource Include="Animations\climbrear_nohat.xnb" />
+    <EmbeddedResource Include="Animations\climbside.xnb" />
+    <EmbeddedResource Include="Animations\climbside_nohat.xnb" />
+    <EmbeddedResource Include="Animations\cornerledgegrab.xnb" />
+    <EmbeddedResource Include="Animations\cornerledgegrab_nohat.xnb" />
+    <EmbeddedResource Include="Animations\cornerledgelower.xnb" />
+    <EmbeddedResource Include="Animations\cornerledgelower_nohat.xnb" />
+    <EmbeddedResource Include="Animations\cornerledgepullup.xnb" />
+    <EmbeddedResource Include="Animations\cornerledgepullup_nohat.xnb" />
+    <EmbeddedResource Include="Animations\cornertobackgrab.xnb" />
+    <EmbeddedResource Include="Animations\cornertobackgrab_nohat.xnb" />
+    <EmbeddedResource Include="Animations\crushhorizontal.xnb" />
+    <EmbeddedResource Include="Animations\crushhorizontal_nohat.xnb" />
+    <EmbeddedResource Include="Animations\crushvertical.xnb" />
+    <EmbeddedResource Include="Animations\crushvertical_nohat.xnb" />
+    <EmbeddedResource Include="Animations\die.xnb" />
+    <EmbeddedResource Include="Animations\die_nohat.xnb" />
+    <EmbeddedResource Include="Animations\dropheavytrile.xnb" />
+    <EmbeddedResource Include="Animations\dropheavytrile_nohat.xnb" />
+    <EmbeddedResource Include="Animations\droptrile.xnb" />
+    <EmbeddedResource Include="Animations\droptrile_nohat.xnb" />
+    <EmbeddedResource Include="Animations\drums\drumscrash.xnb" />
+    <EmbeddedResource Include="Animations\drums\drumshihat.xnb" />
+    <EmbeddedResource Include="Animations\drums\drumsidle.xnb" />
+    <EmbeddedResource Include="Animations\drums\drumstom.xnb" />
+    <EmbeddedResource Include="Animations\drums\drumstom2.xnb" />
+    <EmbeddedResource Include="Animations\drums\drumstoss.xnb" />
+    <EmbeddedResource Include="Animations\drums\drumstwirl.xnb" />
+    <EmbeddedResource Include="Animations\enterdoor.xnb" />
+    <EmbeddedResource Include="Animations\enterdoor_nohat.xnb" />
+    <EmbeddedResource Include="Animations\exitdoor.xnb" />
+    <EmbeddedResource Include="Animations\exitdoor_nohat.xnb" />
+    <EmbeddedResource Include="Animations\flail.xnb" />
+    <EmbeddedResource Include="Animations\flail_nohat.xnb" />
+    <EmbeddedResource Include="Animations\fronttocornergrab.xnb" />
+    <EmbeddedResource Include="Animations\fronttocornergrab_nohat.xnb" />
+    <EmbeddedResource Include="Animations\grab.xnb" />
+    <EmbeddedResource Include="Animations\grabtombstone.xnb" />
+    <EmbeddedResource Include="Animations\grabtombstone_nohat.xnb" />
+    <EmbeddedResource Include="Animations\grab_nohat.xnb" />
+    <EmbeddedResource Include="Animations\hitbell.xnb" />
+    <EmbeddedResource Include="Animations\hitbell_nohat.xnb" />
+    <EmbeddedResource Include="Animations\hurt.xnb" />
+    <EmbeddedResource Include="Animations\hurt_nohat.xnb" />
+    <EmbeddedResource Include="Animations\idlelookaround.xnb" />
+    <EmbeddedResource Include="Animations\idlelookaround_nohat.xnb" />
+    <EmbeddedResource Include="Animations\idleplay.xnb" />
+    <EmbeddedResource Include="Animations\idleplay_nohat.xnb" />
+    <EmbeddedResource Include="Animations\idlesleep.xnb" />
+    <EmbeddedResource Include="Animations\idlesleep_nohat.xnb" />
+    <EmbeddedResource Include="Animations\idletobackclimb.xnb" />
+    <EmbeddedResource Include="Animations\idletobackclimb_nohat.xnb" />
+    <EmbeddedResource Include="Animations\idletofrontclimb.xnb" />
+    <EmbeddedResource Include="Animations\idletofrontclimb_nohat.xnb" />
+    <EmbeddedResource Include="Animations\idletosideclimb.xnb" />
+    <EmbeddedResource Include="Animations\idletosideclimb_nohat.xnb" />
+    <EmbeddedResource Include="Animations\idlewink.xnb" />
+    <EmbeddedResource Include="Animations\idlewink_nohat.xnb" />
+    <EmbeddedResource Include="Animations\idleyawn.xnb" />
+    <EmbeddedResource Include="Animations\idleyawn_nohat.xnb" />
+    <EmbeddedResource Include="Animations\jump.xnb" />
+    <EmbeddedResource Include="Animations\jumptobackclimb.xnb" />
+    <EmbeddedResource Include="Animations\jumptobackclimb_nohat.xnb" />
+    <EmbeddedResource Include="Animations\jumptosideclimb.xnb" />
+    <EmbeddedResource Include="Animations\jumptosideclimb_nohat.xnb" />
+    <EmbeddedResource Include="Animations\jump_nohat.xnb" />
+    <EmbeddedResource Include="Animations\ledgegrabback.xnb" />
+    <EmbeddedResource Include="Animations\ledgegrabback_nohat.xnb" />
+    <EmbeddedResource Include="Animations\ledgegrabfront.xnb" />
+    <EmbeddedResource Include="Animations\ledgegrabfront_nohat.xnb" />
+    <EmbeddedResource Include="Animations\ledgepullupback.xnb" />
+    <EmbeddedResource Include="Animations\ledgepullupback_nohat.xnb" />
+    <EmbeddedResource Include="Animations\ledgepullupfront.xnb" />
+    <EmbeddedResource Include="Animations\ledgepullupfront_nohat.xnb" />
+    <EmbeddedResource Include="Animations\ledgeshimmyback.xnb" />
+    <EmbeddedResource Include="Animations\ledgeshimmyback_nohat.xnb" />
+    <EmbeddedResource Include="Animations\ledgeshimmyfront.xnb" />
+    <EmbeddedResource Include="Animations\ledgeshimmyfront_nohat.xnb" />
+    <EmbeddedResource Include="Animations\letgotombstone.xnb" />
+    <EmbeddedResource Include="Animations\letgotombstone_nohat.xnb" />
+    <EmbeddedResource Include="Animations\lift.xnb" />
+    <EmbeddedResource Include="Animations\liftheavy.xnb" />
+    <EmbeddedResource Include="Animations\liftheavy_nohat.xnb" />
+    <EmbeddedResource Include="Animations\lift_nohat.xnb" />
+    <EmbeddedResource Include="Animations\lookdown.xnb" />
+    <EmbeddedResource Include="Animations\lookdown_nohat.xnb" />
+    <EmbeddedResource Include="Animations\lookleft.xnb" />
+    <EmbeddedResource Include="Animations\lookleft_nohat.xnb" />
+    <EmbeddedResource Include="Animations\lookright.xnb" />
+    <EmbeddedResource Include="Animations\lookright_nohat.xnb" />
+    <EmbeddedResource Include="Animations\lookup.xnb" />
+    <EmbeddedResource Include="Animations\lookup_nohat.xnb" />
+    <EmbeddedResource Include="Animations\lowertoledge.xnb" />
+    <EmbeddedResource Include="Animations\lowertoledge_nohat.xnb" />
+    <EmbeddedResource Include="Animations\opentreasure.xnb" />
+    <EmbeddedResource Include="Animations\opentreasure_nohat.xnb" />
+    <EmbeddedResource Include="Animations\pivottombstone.xnb" />
+    <EmbeddedResource Include="Animations\pivottombstone_nohat.xnb" />
+    <EmbeddedResource Include="Animations\push.xnb" />
+    <EmbeddedResource Include="Animations\pushspinfall.xnb" />
+    <EmbeddedResource Include="Animations\pushspinfall_nohat.xnb" />
+    <EmbeddedResource Include="Animations\push_nohat.xnb" />
+    <EmbeddedResource Include="Animations\run.xnb" />
+    <EmbeddedResource Include="Animations\runswitch.xnb" />
+    <EmbeddedResource Include="Animations\runswitch_nohat.xnb" />
+    <EmbeddedResource Include="Animations\run_nohat.xnb" />
+    <EmbeddedResource Include="Animations\suckedin.xnb" />
+    <EmbeddedResource Include="Animations\suckedin_nohat.xnb" />
+    <EmbeddedResource Include="Animations\swim.xnb" />
+    <EmbeddedResource Include="Animations\swim_nohat.xnb" />
+    <EmbeddedResource Include="Animations\teeter.xnb" />
+    <EmbeddedResource Include="Animations\teeterpaul.xnb" />
+    <EmbeddedResource Include="Animations\teeterpaul_nohat.xnb" />
+    <EmbeddedResource Include="Animations\teeter_nohat.xnb" />
+    <EmbeddedResource Include="Animations\throw.xnb" />
+    <EmbeddedResource Include="Animations\throwheavy.xnb" />
+    <EmbeddedResource Include="Animations\throwheavy_nohat.xnb" />
+    <EmbeddedResource Include="Animations\throw_nohat.xnb" />
+    <EmbeddedResource Include="Animations\tread.xnb" />
+    <EmbeddedResource Include="Animations\tread_nohat.xnb" />
+    <EmbeddedResource Include="Animations\unlockdoor.xnb" />
+    <EmbeddedResource Include="Animations\unlockdoor_nohat.xnb" />
+    <EmbeddedResource Include="Animations\victory.xnb" />
+    <EmbeddedResource Include="Animations\victory_nohat.xnb" />
+    <EmbeddedResource Include="Animations\wakeup.xnb" />
+    <EmbeddedResource Include="Animations\wakeup_nohat.xnb" />
+    <EmbeddedResource Include="Animations\walk.xnb" />
+    <EmbeddedResource Include="Animations\walk_nohat.xnb" />
+    <EmbeddedResource Include="Animations\warp.xnb" />
+    <EmbeddedResource Include="Animations\warp_nohat.xnb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
