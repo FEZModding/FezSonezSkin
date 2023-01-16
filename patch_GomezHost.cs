@@ -25,14 +25,24 @@ namespace FezGame.Components
 
             GomezEffect effect = this.GetType().GetField("effect", f).GetValue(this) as GomezEffect;
 
-            //Logger.Log("Test", (effect != null) ? "true" : "false");
-
             if (effect == null) return;
 
-            if (effect.ColorSwapMode != ColorSwapMode.Cmyk) return;
-
             SemanticMappedVector3 blackSwap = effect.GetType().GetField("blackSwap", f).GetValue(effect) as SemanticMappedVector3;
-            blackSwap.Set(new Vector3(0f, 0f, 1.0f));
+
+            switch (effect.ColorSwapMode)
+            {
+                case ColorSwapMode.VirtualBoy:
+                    blackSwap.Set(new Vector3(101f / 255f, 1f / 255f, 0f));
+                    break;
+                case ColorSwapMode.Gameboy:
+                    blackSwap.Set(new Vector3(82f / 255f, 127f / 255f, 19f / 85f));
+                    break;
+                case ColorSwapMode.Cmyk:
+                    blackSwap.Set(new Vector3(0f, 92f / 255f, 127f / 255f));
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
