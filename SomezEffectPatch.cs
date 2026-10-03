@@ -11,29 +11,25 @@ namespace Sonez
     public class SonezEffectPatch : GameComponent
     {
         private static IDetour GomezHostUpdateDetour;
+        private static FieldInfo GomezHostEffect;
+        private static FieldInfo GomezEffectBlackSwap;
 
         public SonezEffectPatch(Game game) : base(game)
         {
-            GomezHostUpdateDetour = new Hook(
-                typeof(GomezHost).GetMethod("Update"),
-                (Action<Action<GomezHost, GameTime>, GomezHost, GameTime>)delegate(Action<GomezHost, GameTime> original, GomezHost gomezHost, GameTime gameTime)
-                {
-                    UpdateHooked(original, gomezHost, gameTime);
-                }
-            );
+            GomezHostUpdateDetour = new Hook(typeof(GomezHost).GetMethod("Update"), UpdateHooked);
+            GomezHostEffect = typeof(GomezHost).GetField("effect", BindingFlags.NonPublic | BindingFlags.Instance);
+            GomezEffectBlackSwap = typeof(GomezEffect).GetField("blackSwap", BindingFlags.NonPublic | BindingFlags.Instance);
         }
 
         private void UpdateHooked(Action<GomezHost, GameTime> original, GomezHost gomezHost, GameTime gameTime)
         {
             original(gomezHost, gameTime);
 
-            var f = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static;
-
-            GomezEffect effect = gomezHost.GetType().GetField("effect", f).GetValue(gomezHost) as GomezEffect;
+            GomezEffect effect = GomezHostEffect.GetValue(gomezHost) as GomezEffect;
 
             if (effect == null) return;
 
-            SemanticMappedVector3 blackSwap = effect.GetType().GetField("blackSwap", f).GetValue(effect) as SemanticMappedVector3;
+            SemanticMappedVector3 blackSwap = GomezEffectBlackSwap.GetValue(effect) as SemanticMappedVector3;
 
             switch (effect.ColorSwapMode)
             {

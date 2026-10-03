@@ -2,7 +2,7 @@
 
 ![thumbnail](/Properties/thumbnail.png)
 
-## Description 
+## Description
 This is a [HAT](https://github.com/Krzyhau/HAT) mod which replaces Gomez with Sonez - a merge of Gomez and Sonic, which can be seen in Speedrun Mode thumbnail.
 
 ## Installation
@@ -14,5 +14,5 @@ This is a [HAT](https://github.com/Krzyhau/HAT) mod which replaces Gomez with So
 ## Building
 
 1. Clone repository.
-2. Copy all dependencies listed in `Dependencies` directory and paste them into said directory.
+2. Copy `UserProperties.xml.template` into a new file named `UserProperties.xml` and edit it with your FEZ+HAT installation directory
 3. Build it. idk. it should work.
