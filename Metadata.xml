@@ -2,6 +2,9 @@
    <Name>FezSonezSkin</Name>
    <Description>Replaces Gomez sprites with Sonic</Description>
    <Author>Krzyhau</Author>
-   <Version>1.1</Version>
+   <Version>2.0</Version>
    <LibraryName>FEZ.Sonez.dll</LibraryName>
+   <Dependencies>
+      <DependencyInfo Name="HAT" MinimumVersion="3.0"/>
+   </Dependencies>
 </Metadata>
